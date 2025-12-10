@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+  <head>
+    <meta charset="utf-8">
+    <!-- Made by <Michael Oso> on <2025/12/09> -->
+    <title>Michael's Sports Hub</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Georgia, serif;
+        background-color: #f2f2f2;
+        line-height: 1.6;
+      }
+
+      /* 1200px centered content area */
+      #content-wrapper {
+        width: 1200px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 20px 40px 40px 40px;
+      }
+
+      header {
+        background-color: #002b5c;
+        color: white;
+        padding: 20px;
+        margin-bottom: 15px;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.2em;
+      }
+
+      header p {
+        margin: 5px 0 0 0;
+        font-size: 0.95em;
+      }
+      
+
+
+      nav {
+        background-color: #ffffff;
+        border-bottom: 3px solid #002b5c;
+        margin-bottom: 25px;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 10px 0;
+        margin: 0;
+        text-align: center;
+      }
+
+      nav li {
+        display: inline-block;
+        margin: 0 15px;
+      }
+
+      nav a {
+        text-decoration: none;
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+      }
+
+      /* Link states */
+      nav a:link {
+        color: #002b5c;
+      }
+
+      nav a:visited {
+        color: #003f7f;
+      }
+
+      nav a:hover {
+        color: #e74c3c;
+      }
+
+      nav a:active {
+        color: #000000;
+      }
+
+      h2 {
+        font-family: "Trebuchet MS", sans-serif;
+        color: #002b5c;
+        margin-top: 0;
+      }
+
+      p {
+        margin-bottom: 12px;
+      }
+
+      section {
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #dddddd;
+      }
+
+      /* Hero / intro section */
+      #home {
+        background-color: #ecf3ff;
+        padding: 20px;
+      }
+
+      #home img {
+        float: right;
+        margin-left: 20px;
+        border: 3px solid #002b5c;
+      }
+
+      /* Favourite sports cards */
+      #sports {
+        background-color: #ffffff;
+      }
+
+      .sports-grid {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        gap: 20px;
+      }
+
+      .sport-card {
+        background-color: #002b5c;
+        color: white;
+        padding: 15px;
+      }
+
+      .sport-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border: 2px solid white;
+      }
+
+      .sport-card h3 {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .sport-card p {
+        font-size: 0.9em;
+      }
+
+      /* Training schedule table */
+      #training table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+
+      #training th,
+      #training td {
+        border: 2px solid #002b5c;
+        padding: 8px;
+        text-align: center;
+      }
+
+      #training th {
+        background-color: #002b5c;
+        color: white;
+      }
+
+      #training tr:nth-child(even) {
+        background-color: #f2f8ff;
+      }
+
+      /* Simple gallery */
+      #gallery {
+        background-color: #f9f9f9;
+        padding: 20px;
+      }
+
+      .gallery-row {
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        gap: 10px;
+        margin-bottom: 15px;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+        border: 2px solid #002b5c;
+      }
+
+      .gallery-item p {
+        text-align: center;
+        font-size: 0.85em;
+        margin-top: 5px;
+      }
+
+      /* Contact section */
+      #contact ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      #contact li {
+        margin-bottom: 8px;
+      }
+
+      #contact a:link {
+        color: #e74c3c;
+      }
+
+      #contact a:visited {
+        color: #a93226;
+      }
+
+      #contact a:hover {
+        color: #002b5c;
+      }
+
+      #contact a:active {
+        color: #000000;
+      }
+
+      footer {
+        background-color: #002b5c;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        margin-top: 25px;
+        font-size: 0.9em;
+      }
+
+      footer a:link,
+      footer a:visited {
+        color: #ffdd99;
+      }
+
+      footer a:hover {
+        color: #ffffff;
+      }
+
+      footer a:active {
+        color: #ffd700;
+      }
+
+      /* Clear float from hero image */
+      .clear {
+        clear: both;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="content-wrapper">
+
+      <header>
+        <h1>Michael's Sports Hub</h1>
+        <p>A personal look at the sports I love, how I stay active, and why sports matter to me.</p>
+      </header>
+
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#sports">My Favourite Sports</a></li>
+          <li><a href="#training">Training Schedule</a></li>
+          <li><a href="#gallery">Photo Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Section 1: Home / Intro -->
+      <section id="home">
+        <h2>Welcome to My Sports World</h2>
+
+        <img src="sports-hero.jpg" alt="A collage of different sports balls and equipment" width="320" height="220">
+
+        <p>
+          Sports have always been a big part of my life. Whether it’s shooting hoops, playing soccer on the field,
+          or watching highlight reels late at night, I love the energy, focus, and teamwork that sports bring.
+        </p>
+        <p>
+          This website is a small snapshot of the sports I enjoy, how I like to stay active, and a simple look at
+          how I organize my week around training and practice. Everything here is based on my own interests and
+          experiences as a sports fan and casual player.
+        </p>
+        <p>
+          Scroll down to see my favourite sports, sample training schedule, and a small gallery of sports moments
+          that inspire me.
+        </p>
+
+        <div class="clear"></div>
+      </section>
+
+      <!-- Section 2: Favourite Sports -->
+      <section id="sports">
+        <h2>My Favourite Sports</h2>
+        <p>
+          I enjoy watching and playing different sports for different reasons. Some are fast and intense,
+          while others are more about strategy and patience. Here are three of my favourites.
+        </p>
+
+        <div class="sports-grid">
+          <div class="sport-card">
+            <img src="basketball.jpg.jpg" alt="A basketball going through a hoop" width="350" height="160">
+            <h3>Basketball</h3>
+            <p>
+              I like basketball because it’s fast-paced and team-oriented. I enjoy practicing layups,
+              shooting from the three-point line, and trying to improve my ball-handling skills.
+            </p>
+          </div>
+
+          <div class="sport-card">
+            <img src="soccer.jpg" alt="A soccer ball on a field" width="350" height="160">
+            <h3>Soccer</h3>
+            <p>
+              Soccer is all about movement and timing. I like playing casually with friends and trying
+              to improve my passing, dribbling, and overall stamina on the field.
+            </p>
+          </div>
+
+          <div class="sport-card">
+            <img src="running-track.jpg" alt="Running track lanes at a stadium" width="350" height="160">
+            <h3>Running / Track</h3>
+            <p>
+              Running helps me clear my mind and stay in shape. I try to mix short sprints with longer
+              steady runs so I can work on both speed and endurance.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Training Schedule with table -->
+      <section id="training">
+        <h2>Sample Weekly Training Schedule</h2>
+        <p>
+          This is a simple example of how I might organize a training week around school and other responsibilities.
+          Some days are more intense, and some are focused on rest and recovery.
+        </p>
+
+        <table>
+          <tr>
+            <th>Day</th>
+            <th>Activity</th>
+            <th>Focus</th>
+            <th>Duration</th>
+          </tr>
+          <tr>
+            <td>Monday</td>
+            <td>Basketball shooting drills</td>
+            <td>Form, footwork, three-pointers</td>
+            <td>45 minutes</td>
+          </tr>
+          <tr>
+            <td>Tuesday</td>
+            <td>Light jog or run</td>
+            <td>Endurance, pacing</td>
+            <td>30 minutes</td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td>Casual soccer with friends</td>
+            <td>Teamwork, passing</td>
+            <td>1 hour</td>
+          </tr>
+          <tr>
+            <td>Thursday</td>
+            <td>Rest or stretching</td>
+            <td>Recovery, flexibility</td>
+            <td>20–30 minutes</td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+            <td>Interval sprints on track</td>
+            <td>Speed, acceleration</td>
+            <td>30 minutes</td>
+          </tr>
+          <tr>
+            <td>Saturday</td>
+            <td>Mixed sports day</td>
+            <td>Fun, trying different drills</td>
+            <td>1–2 hours</td>
+          </tr>
+          <tr>
+            <td>Sunday</td>
+            <td>Rest</td>
+            <td>Recovery and planning</td>
+            <td>—</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- Section 4: Gallery -->
+      <section id="gallery">
+        <h2>Photo Gallery</h2>
+        <p>
+          These images represent the kind of energy and atmosphere that I enjoy in sports, from outdoor courts
+          to stadium lights at night.
+        </p>
+
+        <div class="gallery-row">
+          <div class="gallery-item">
+            <img src="night-court.jpg" alt="Basketball court lit up at night" width="250" height="140">
+            <p>Late night hoop sessions.</p>
+          </div>
+          <div class="gallery-item">
+            <img src="stadium.jpg" alt="Large sports stadium filled with fans" width="250" height="140">
+            <p>Big game atmosphere.</p>
+          </div>
+          <div class="gallery-item">
+            <img src="soccer-goal.jpg" alt="Soccer goal on a grass field" width="250" height="140">
+            <p>Perfect spot for penalties.</p>
+          </div>
+          <div class="gallery-item">
+            <img src="running-shoes.jpg" alt="Running shoes on a track" width="250" height="140">
+            <p>Getting ready for a run.</p>
+          </div>
+        </div>
+
+        <div class="gallery-row">
+          <div class="gallery-item">
+            <img src="team-huddle.jpg" alt="Sports team in a huddle" width="250" height="140">
+            <p>Teamwork and support.</p>
+          </div>
+          <div class="gallery-item">
+            <img src="whistle.jpg" alt="Coach's whistle and stopwatch" width="250" height="140">
+            <p>Coaching and structure.</p>
+          </div>
+          <div class="gallery-item">
+            <img src="scoreboard.jpg" alt="Digital sports scoreboard" width="250" height="140">
+            <p>Chasing the win.</p>
+          </div>
+          <div class="gallery-item">
+            <img src="water-bottle.jpg" alt="Sports water bottle on the sideline" width="250" height="140">
+            <p>Stay hydrated.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Contact -->
+      <section id="contact">
+        <h2>Contact & Useful Links</h2>
+        <p>
+          If you would like to contact me about this site or talk about sports, you can reach me by email.
+        </p>
+
+        <ul>
+          <li>
+            <!-- Replace with your actual uWaterloo email -->
+            Email me: <a href="mailto:moso@uwaterloo.ca">moso@uwaterloo.ca</a>
+          </li>
+          <li>
+            Visit an external sports site for news and scores:
+            <a href="https://www.espn.com" target="_blank">ESPN</a>
+          </li>
+        </ul>
+
+        <p>
+          This website was created as a class assignment to practice HTML and CSS, and to share a bit about how
+          sports fit into my life.
+        </p>
+      </section>
+
+      <footer>
+        <p>&copy; 2025 Michael's Sports Hub. All rights reserved.</p>
+        <p>
+          External sports news from
+          <a href="https://www.espn.com" target="_blank">ESPN</a>.
+        </p>
+      </footer>
+
+    </div>
+  </body>
+</html>
+
+
